@@ -1,9 +1,10 @@
+
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy 
 
 #Load txt file
-data = np.loadtxt('data.txt', delimiter='\t')
+data = np.loadtxt('qiti-iqc-Yb-rabi-data.txt', delimiter='\t')
 print(data.shape)
 
 #Take average of columns
