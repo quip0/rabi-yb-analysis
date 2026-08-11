@@ -32,12 +32,10 @@ pulse_error = (0.5/(fit_freq**2) )*freq_error
 print(f"The error in pi pulse length is {pulse_error} microseconds.")
 
 
-def functiontwoentropy(prob):
+def entropy(prob):
     return -prob*np.log2(prob) - (1-prob)*np.log2(1-prob)
-def functiontwobernoulli(prob):
-    return prob*(1-prob)
 
-probabilities = functiontwoentropy(averages)
+probabilities = entropy(averages)
 plt.plot(steps, probabilities, marker='^', label='randomness of outcome')
 print("These are the randomness of each outcome based on binary entropy")
 print(probabilities)
