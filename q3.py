@@ -32,8 +32,10 @@ pulse_error = (0.5/(fit_freq**2) )*freq_error
 print(f"The error in pi pulse length is {pulse_error} microseconds.")
 
 
+# we have to justify why we chose this
 def entropy(prob):
-    return -prob*np.log2(prob) - (1-prob)*np.log2(prob)
+        prob = np.clip(prob, ie-12, 1 - 1e-12) # so it doesnt nan at t=0 
+    return -prob*np.log2(prob) - (1-prob)*np.log2(1-prob)
 
 probabilities = entropy(averages)
 plt.plot(steps, probabilities, marker='^', label='randomness of outcome')
