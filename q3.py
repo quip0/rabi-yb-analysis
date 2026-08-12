@@ -33,7 +33,7 @@ print(f"The error in pi pulse length is {pulse_error} microseconds.")
 
 
 def entropy(prob):
-    return -prob*np.log2(prob) - (1-prob)*np.log2(1-prob)
+    return -prob*np.log2(prob) - (1-prob)*np.log2(prob)
 
 probabilities = entropy(averages)
 plt.plot(steps, probabilities, marker='^', label='randomness of outcome')
